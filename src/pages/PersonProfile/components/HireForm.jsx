@@ -2,9 +2,12 @@ import { useState } from 'react'
 
 function HireForm(props) {
   const [wage, setWage] = useState(0)
-
-  function handleSubmit(event) {
-    event.preventDefault()
+  console.log("inside hireform: ",props);
+  const {person, onHire} = props;
+  
+  const handleSubmit = (event)  => {
+    event.preventDefault();
+    onHire(person);
   }
 
   return (
