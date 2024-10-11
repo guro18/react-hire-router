@@ -2,7 +2,7 @@
 import PeopleList from './components/PeopleList';
 
 function Dashboard(props) {
-  const { hiredPeople, people} = props
+  const { hiredPeople, people} = props;
 
   return (
     <main className="dashboard-layout">
@@ -15,7 +15,7 @@ function Dashboard(props) {
         {hiredPeople.length > 0 && <PeopleList people={hiredPeople} />}
       </section>
     </main>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;

@@ -29,8 +29,6 @@ export default function App() {
     });
   }, []);
 
-  console.log("hired people: ", hiredPeople);
-
   return (
     <div className='App'>
       <header>
@@ -38,9 +36,15 @@ export default function App() {
         <ul className='under-title'>Dashboard</ul>
       </header>
       <Routes>
-        <Route path="/" element={<Dashboard hiredPeople = {hiredPeople} people={people}/>}/>
+        <Route 
+          path="/" 
+          element={<Dashboard hiredPeople = {hiredPeople} people={people}/>}
+        />
         <Route path="/view" element={<PersonProfile props = {people}/>}/>
-        <Route path="/view/:id" element={<PersonProfile props = {people} onHire={hirePerson}/>}/>
+        <Route 
+          path="/view/:id" 
+          element={<PersonProfile props = {people} onHire={hirePerson}/>}
+        />
       </Routes>
     </div>
   );

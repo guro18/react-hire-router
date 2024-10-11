@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 function PeopleListItem(props) {
   const { person } = props;
-  console.log("inside peoplesList people", person.wage);
 
   return (
     <li className='contact-card'>
@@ -30,7 +29,7 @@ function PeopleListItem(props) {
       }
       <Link to={{ pathname: `/view/${person.login.uuid}`}}>View</Link>
     </li>
-  )
+  );
 }
 
 export default PeopleListItem;
