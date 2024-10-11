@@ -1,13 +1,16 @@
-import { useState } from 'react'
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
 
 function HireForm(props) {
-  const [wage, setWage] = useState(0)
+  const [wage, setWage] = useState(0);
   console.log("inside hireform: ",props);
   const {person, onHire} = props;
   
   const handleSubmit = (event)  => {
     event.preventDefault();
     onHire(person);
+    person.wage = wage;
+    person.isHired = true;
   }
 
   return (
@@ -22,7 +25,7 @@ function HireForm(props) {
       />
       <button type="submit">Hire</button>
     </form>
-  )
+  );
 }
 
-export default HireForm
+export default HireForm;
