@@ -29,11 +29,9 @@ export default function App() {
   }
 
   useEffect(() => {
-    console.log("fetching");
     fetch(GET_PERSONS)
     .then((response) => response.json())
     .then((responseData) => {
-      console.log("fetched data: ", responseData.results);
       setPeople(responseData.results);
     });
   }, []);

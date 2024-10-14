@@ -12,10 +12,8 @@ function PersonProfile(props) {
   const { id } = useParams();
 
   useEffect(() => {
-    console.log("fetch person with id= ", id);
     const matchingPers = props.props.find((person) => 
       (person.login.uuid) === (id));
-    console.log("matching pers", matchingPers);
     setPerson(matchingPers);
   }, [id, person]);
 

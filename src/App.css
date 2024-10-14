@@ -63,17 +63,17 @@ input {
 }
 
 label {
-  width: 250px; /* Fixed width for labels */
+  width: 250px;
   text-align: right;
-  margin-right: 10px; /* Space between label and input */
+  margin-right: 10px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the form horizontally */
+  align-items: center;
   justify-content: center;
-  margin: 0 auto; /* Ensure it's centered in its container */
+  margin: 0 auto;
 }
 
 button {

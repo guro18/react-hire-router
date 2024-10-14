@@ -6,7 +6,6 @@ import { noXssOrSql } from '../../Validation';
 function HireForm(props) {
   const [wage, setWage] = useState();
   const [isInvalidInput, setIsInvalidInput] = useState(false);
-  console.log("inside hireform: ",props);
   const {person, onHire} = props;
 
   const handleInputChange = (e) => {
@@ -34,6 +33,7 @@ function HireForm(props) {
         value={wage}
       />
       </div>
+      
       <button type="submit" disabled={isInvalidInput}>Hire</button>
       {isInvalidInput && 
       <small 

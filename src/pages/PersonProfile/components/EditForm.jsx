@@ -8,7 +8,6 @@ function EditForm(props) {
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
   const [isInvalidInput, setIsInvalidInput] = useState(false);
-  console.log("inside Editform: ",props);
   const {person, onEdit} = props;
 
   const handleInputChange = (e) => {
