@@ -24,10 +24,13 @@ function PeopleListItem(props) {
       {person.wage && 
       <h4>
         <span className='highlight'>Wage: $ </span>
-        {person.wage}
+        {person.wage} /Hour
       </h4>
       }
-      <Link to={{ pathname: `/view/${person.login.uuid}`}}>View</Link>
+      {!person.isHired ? 
+        (<Link to={{ pathname: `/view/${person.login.uuid}`}}>View/Hire</Link>)
+        : (<Link to={{ pathname: `/edit/${person.login.uuid}`}}>Edit</Link>)
+      }
     </li>
   );
 }

@@ -19,6 +19,15 @@ export default function App() {
     navigate('/');
   };
 
+  const editPerson = (updatedPerson) => {
+    setHiredPeople(prevPeople =>
+      prevPeople.map(person =>
+        person.login.uuod === updatedPerson.login.uuid ? updatedPerson : person
+      )
+    );
+    navigate('/');
+  }
+
   useEffect(() => {
     console.log("fetching");
     fetch(GET_PERSONS)
@@ -44,6 +53,11 @@ export default function App() {
         <Route 
           path="/view/:id" 
           element={<PersonProfile props = {people} onHire={hirePerson}/>}
+        />
+        <Route path="/edit" element={<PersonProfile props = {people}/>}/>
+        <Route 
+          path="/edit/:id" 
+          element={<PersonProfile props = {people} onEdit={editPerson}/>}
         />
       </Routes>
     </div>

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { noXssOrSql } from '../../Validation';
 
 function HireForm(props) {
-  const [wage, setWage] = useState(0);
+  const [wage, setWage] = useState();
   const [isInvalidInput, setIsInvalidInput] = useState(false);
   console.log("inside hireform: ",props);
   const {person, onHire} = props;
@@ -23,16 +23,18 @@ function HireForm(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="wage">Wage Offer: </label>
+    <form className='text-box-container' onSubmit={handleSubmit}>
+      <div className='text-box'>
+      <label htmlFor="wage">Wage Offer ($/hour): </label>
       <input
-        type="text"
+        type="number"
         id="wage"
         name="wage"
         onChange={handleInputChange}
         value={wage}
       />
-      <button type="submit" disabled={isInvalidInput}>Hire!</button>
+      </div>
+      <button type="submit" disabled={isInvalidInput}>Hire</button>
       {isInvalidInput && 
       <small 
         style={{ color: 'red' }}>Potential harmful code detected

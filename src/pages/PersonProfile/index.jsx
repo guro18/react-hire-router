@@ -3,10 +3,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import HireForm from './components/HireForm';
+import EditForm from './components/EditForm';
 
 function PersonProfile(props) {
   const [person, setPerson] = useState(null);
   const onHire = props.onHire;
+  const onEdit = props.onEdit;
   const { id } = useParams();
 
   useEffect(() => {
@@ -36,7 +38,18 @@ function PersonProfile(props) {
           <span className='highlight'>Country: </span>
           {person.location.country}
         </h4>
-        <HireForm person={person} onHire={onHire}/>
+        <h4>
+          {person.wage && (
+            <>
+              <span className='highlight'>Wage: </span>
+              {person.wage}
+            </>
+          )}
+        </h4>
+        {!person.isHired ?
+        (<HireForm person={person} onHire={onHire}/>)
+        : (<EditForm person={person} onEdit={onEdit}/>)
+        }
       </div>
     </article>
   );
