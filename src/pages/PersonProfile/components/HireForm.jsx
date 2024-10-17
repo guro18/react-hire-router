@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { noXssOrSql } from '../../Validation';
 
 function HireForm(props) {
-  const [wage, setWage] = useState();
+  const [wage, setWage] = useState("");
   const [isInvalidInput, setIsInvalidInput] = useState(false);
   const {person, onHire} = props;
 
